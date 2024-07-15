@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css"/>
+    <title th:text="${page_name}">></title>
+</head>
+<body>
+    <div class="container">
+        <div class="box" style="width: 180px;">
+            <div>
+                <h1 th:text="${page_name}"></h1>
+                <hr>
+            </div>
+            <div>
+                <form th:action="@{/}" method="post" th:object="${graphsTable}">
+                    <label>Nodes: </label> <br>
+                    <input type="number" name="maxNodes" min="1" value="1" placeholder="Insert count of maximum nodes"
+                           class="input" th:field="*{nodesCount}" required> <br>
+                    <label>Edges: </label> <br>
+                    <input type="number" name="maxEdges" min="0" placeholder="Insert count of maximum edges"
+                           class="input" th:field="*{edgesCount}" required> <br> <br>
+
+                    <button type="submit" ID="drawGraphButton">Create graph</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <div class="box" style="width: 800px;">
+            <input type="hidden" id="varGraphJson" th:value="${graphJson}" />
+            <div id="graph"></div>
+        </div>
+
+    </div>
+</body>
+<script type="text/javascript" th:src="@{/js/graph.js}"></script>
+<script th:inline="javascript">
+    // /*<![CDATA[*/
+    // var graphJson = /*[[${graphJson}]]*/ 'null'
+    //
+    // document.getElementById('drawGraphButton').addEventListener('click', function() {
+    //     localStorage.setItem('graphDrawn', 'true');
+    // });
+    //
+    // if (localStorage.getItem('graphDrawn') === 'true') {
+    //     drawGraph(graphJson);
+    //     localStorage.removeItem('graphDrawn');
+    // }
+</script>
+</html>

@@ -1,0 +1,22 @@
+#graph {
+    width: 800px;
+    height: 585px;
+    border: 1px solid gray;
+}
+
+.container {
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.box {
+    flex: 1;
+    padding: 5px;
+    margin: 10px;
+}
+
+.vertical-line {
+    width: 1px;
+    background-color: lightgray;
+}
