@@ -1,5 +1,5 @@
 # Graph
  Simple digraph creating program!
-    using: Java, Thymeleaf, Javascript, HTML, CSS;
-    datapase: H2 (if needed);
-    for digraph: vis.js
+    Using: Java, Thymeleaf, Javascript, HTML, CSS;
+    Datapase: H2 (if needed);
+    For digraph: vis.js
